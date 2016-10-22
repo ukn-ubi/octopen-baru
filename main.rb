@@ -8,9 +8,9 @@ class Compiler
     @code.gsub!("声", "print ") #koe
     @code.gsub!("私", "== ") #watashi
     @code.gsub!("市", "+= ") #shi
-    @code.gsub!("津", "++ ") #tsu
+    @code.gsub!("津", "+=1 ") #tsu
     @code.gsub!("場", "-= ") #ba
-    @code.gsub!("位", "-- ") #i
+    @code.gsub!("位", "-=1 ") #i
     @code.gsub!("湯", "def ") #yu
     @code.gsub!("家", "end ") #ke
     @code.gsub!("歩", "(' ") #ho
@@ -104,5 +104,5 @@ class Compiler
   end
 end
 
-c = Compiler.new(ARGV.join(" ")).repla
+c = Compiler.new("湯f(a,b,x)h=a+b同愛h同f(b,h,x位)家").repla
 puts(c)
