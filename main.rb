@@ -264,5 +264,27 @@ class Compiler
   end
 end
 
-c = Compiler.new("湯f(a,b,x)府 x!=0逗h=a+b同愛h同f(b,h,x位)家家").repla
-puts(c)
+
+if ARGV.first == "fl" then
+  f = File.new(ARGV[1], 'r')
+  c = Compiler.new(f.read).repla
+  puts "SIZE: #{f.size}"
+  puts(c)
+elsif ARGV.first == "al" then
+  c = Compiler.new(ARGV.drop(1).join("")).repla
+  puts(c)
+elsif ARGV.first =="ar" then
+  c = Compiler.new(ARGV.drop(1).join("")).repla
+  puts(c)
+  eval c
+elsif ARGV.first == "fr" then
+  f = File.new(ARGV[1], 'r')
+  c = Compiler.new(f.read).repla
+  puts "SIZE: #{f.size}"
+  puts("#{c}")
+  print "\n\n"
+  eval c
+else
+  c = Compiler.new("湯f(a,b,x)府 x!=0逗h=a+b同愛h同f(b,h,x位)家家").repla
+  puts(c)
+end
