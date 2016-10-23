@@ -256,8 +256,10 @@ class Compiler
     @code.gsub!("뉸", "8")
     @code.gsub!("뇬", "9")
     @code.gsub!("륜", "octopen-baru")
-    @code.gsub!("랸", "open")
-    @code.gsub!("퐄", "close")
+    @code.gsub!("랸", "open ")
+    @code.gsub!("퐄", "close ")
+    @code.gsub!("울", "/.match ")
+    @code.gsub!("눌", "~= ")
     return @code
   end
 end
